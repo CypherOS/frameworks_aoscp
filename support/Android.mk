@@ -1,5 +1,4 @@
-# Copyright (C) 2011 The Android Open Source Project
-# Copyright (C) 2018 CypherOS
+# Copyright (C) 2015 The Android Open Source Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -13,27 +12,5 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-LOCAL_PATH := $(call my-dir)
-
-SUPPORT_PATH_LOTTIE := java/aoscp/support/lottie
-
-include $(CLEAR_VARS)
-
-LOCAL_USE_AAPT2 := true
-LOCAL_MODULE := aoscp-support-lottie
-LOCAL_SDK_VERSION := $(SUPPORT_CURRENT_SDK_VERSION)
-LOCAL_SRC_FILES := $(call all-java-files-under, $(SUPPORT_PATH_LOTTIE))
-LOCAL_RESOURCE_DIR := $(LOCAL_PATH)/res
-
-LOCAL_STATIC_ANDROID_LIBRARIES := \
-        android-support-v7-appcompat
-		
-LOCAL_SHARED_ANDROID_LIBRARIES := \
-        android-support-v4 \
-        android-support-annotations
-
-LOCAL_JAVA_LANGUAGE_VERSION := 1.7
-LOCAL_AAPT_FLAGS := --add-javadoc-annotation doconly
-LOCAL_JAR_EXCLUDE_FILES := none
-
-include $(BUILD_STATIC_JAVA_LIBRARY)
+LOCAL_PATH:= $(call my-dir)
+include $(call all-makefiles-under,$(LOCAL_PATH))
