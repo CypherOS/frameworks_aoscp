@@ -13,4 +13,13 @@
 # limitations under the License.
 
 LOCAL_PATH:= $(call my-dir)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE_CLASS := JAVA_LIBRARIES
+LOCAL_MODULE := android-material-components
+LOCAL_SRC_FILES := libs/material-1.1.0-alpha03.aar
+LOCAL_UNINSTALLABLE_MODULE := true
+LOCAL_SDK_VERSION := current
+include $(BUILD_PREBUILT)
+
 include $(call all-makefiles-under,$(LOCAL_PATH)/support)
