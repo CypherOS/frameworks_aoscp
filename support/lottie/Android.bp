@@ -1,0 +1,18 @@
+android_library {
+    name: "aoscp-support-lottie",
+    srcs: [
+        "src/**/*.java",
+        "src/**/I*.aidl",
+    ],
+	resource_dirs: ["res"],
+	static_libs: [
+        "android-support-v4",
+        "android-support-v7-appcompat",
+        "android-support-annotations",
+    ],
+	manifest: "AndroidManifest.xml",
+	
+	aaptflags: [
+        "--add-javadoc-annotation doconly",
+    ],
+}
